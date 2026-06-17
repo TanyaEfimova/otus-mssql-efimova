@@ -69,7 +69,7 @@ JOIN Sales.OrderLines l ON l.OrderID = o.OrderID
 JOIN Sales.Customers  c ON c.CustomerID = o.CustomerID
 WHERE (l.UnitPrice > 100.00)
    OR (l.Quantity>20 and o.PickingCompletedWhen is not null)
-ORDER BY [номер квартала заказа], [треть года], [дата заказа];
+ORDER BY [номер квартала заказа], [треть года], o.OrderDate;
 
 /* Добавьте вариант этого запроса с постраничной выборкой,
 пропустив первую 1000 и отобразив следующие 100 записей:  */
@@ -98,7 +98,7 @@ JOIN Sales.OrderLines l ON l.OrderID = o.OrderID
 JOIN Sales.Customers  c ON c.CustomerID = o.CustomerID
 WHERE (l.UnitPrice > 100.00)
 OR    (l.Quantity>20 and o.PickingCompletedWhen is not null)
-ORDER BY [номер квартала заказа], [треть года], [дата заказа]
+ORDER BY [номер квартала заказа], [треть года], o.OrderDate
 OFFSET(@pagenum - 1) * @pagesize ROWS
 FETCH NEXT @pagesize ROWS ONLY;
 
