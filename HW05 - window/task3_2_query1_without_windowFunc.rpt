@@ -1,0 +1,13 @@
+﻿SQL Server parse and compile time: 
+   CPU time = 125 ms, elapsed time = 130 ms.
+Warning: Null value is eliminated by an aggregate or other SET operation.
+
+(10 rows affected)
+Table 'InvoiceLines'. Scan count 4, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 489, lob physical reads 2, lob page server reads 0, lob read-ahead reads 777, lob page server read-ahead reads 0.
+Table 'InvoiceLines'. Segment reads 2, segment skipped 0.
+Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Invoices'. Scan count 2, logical reads 46, physical reads 1, page server reads 0, read-ahead reads 28, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'StockItems'. Scan count 2, logical reads 12, physical reads 1, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 828 ms,  elapsed time = 899 ms.

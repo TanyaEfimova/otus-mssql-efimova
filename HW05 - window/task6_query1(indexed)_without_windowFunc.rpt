@@ -1,0 +1,31 @@
+﻿SQL Server parse and compile time: 
+   CPU time = 109 ms, elapsed time = 122 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+Table 'InvoiceLines'. Scan count 2, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 341, lob physical reads 3, lob page server reads 0, lob read-ahead reads 777, lob page server read-ahead reads 0.
+Table 'InvoiceLines'. Segment reads 1, segment skipped 0.
+Table 'Invoices'. Scan count 1, logical reads 156, physical reads 1, page server reads 0, read-ahead reads 238, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Customers'. Scan count 1, logical reads 40, physical reads 1, page server reads 0, read-ahead reads 31, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 516 ms,  elapsed time = 564 ms.
+
+(228265 rows affected)
+Table '#Sales______________________________________________________________________________________________________________000000000029'. Scan count 13, logical reads 2363, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 3562 ms,  elapsed time = 807 ms.
+SQL Server parse and compile time: 
+   CPU time = 189 ms, elapsed time = 189 ms.
+
+(1326 rows affected)
+Table '#Sales______________________________________________________________________________________________________________000000000029'. Scan count 228278, logical reads 1839264, physical reads 0, page server reads 0, read-ahead reads 112, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 109733 ms,  elapsed time = 10420 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 2 ms.
