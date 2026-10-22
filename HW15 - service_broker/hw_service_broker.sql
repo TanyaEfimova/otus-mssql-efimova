@@ -144,16 +144,20 @@ BEGIN
 			(
 				SELECT 
 				N'Отчёт о количестве заказов данного клиента за указанный период' 
-									           AS [Message],
-					i.CustomerID               AS CustomerID, 
-					ISNULL(COUNT(o.OrderID),0) AS OrdersQuantity,
-					@FromDate                  AS [Period/From_this_date],
-					@ToDate                    AS [Period/To_this_date]
-				FROM Sales.Invoices i
-				LEFT JOIN Sales.Orders o ON i.CustomerID = o.CustomerID
-										AND o.OrderDate >= @FromDate and o.OrderDate <= @ToDate
-				WHERE i.CustomerID = @CustomerId
-				GROUP BY i.CustomerID
+									               AS [Message],
+					@CustomerId                    AS CustomerID, 
+					(select count(distinct OrderID) 
+					 from Sales.Invoices 
+					 where CustomerID = @CustomerId 
+					   and InvoiceDate >= @FromDate 
+					   and InvoiceDate <= @ToDate) AS OrdersInInvoices,
+					(select count(OrderID)
+					 from Sales.Orders 
+					 where CustomerID = @CustomerId 
+					   and OrderDate >= @FromDate 
+					   and OrderDate <= @ToDate)   AS OrdersQuantity,
+					@FromDate                      AS [Period/From_this_date],
+					@ToDate                        AS [Period/To_this_date]				
 				FOR XML PATH('ResponseMessage')
 			); 
              
@@ -168,6 +172,7 @@ BEGIN
 	COMMIT TRAN;
 END;
 GO
+
 
 -- создаём 3-ю ХП (получает сообщение-отчёт и сохраняет его в таблице)-----------------------
 CREATE OR ALTER PROCEDURE Sales.usp_ConfirmCustomerPeriodReport
