@@ -271,7 +271,7 @@ CREATE NONCLUSTERED INDEX [IX_SearchSetItems_IngredientId] ON [SearchSetItems]([
 ALTER TABLE [IngredientCategories] ADD CONSTRAINT [CK_IngredientCategories_Name_Valid]
 CHECK 
 (
-    LEN(TRIM([Name])) >= 0                    -- не должно быть пустым или состоять из пробелов
+    LEN(TRIM([Name])) > 0                    -- не должно быть пустым или состоять из пробелов
     AND [Name] = TRIM([Name])                 -- без ведущих/концевых пробелов
 );
 
@@ -280,14 +280,14 @@ ALTER TABLE [Ingredients] ADD CONSTRAINT [UK_Ingredients_Name] UNIQUE ([Name]);
 ALTER TABLE [RecipeCategories] ADD CONSTRAINT [CK_RecipeCategories_Name_Valid]
 CHECK 
 (
-    LEN(TRIM([Name])) >= 0                    -- не должно быть пустым или состоять из пробелов
+    LEN(TRIM([Name])) > 0                    -- не должно быть пустым или состоять из пробелов
     AND [Name] = TRIM([Name])                 -- без ведущих/концевых пробелов
 );
 
 ALTER TABLE [Recipes] ADD CONSTRAINT [CK_Recipes_Name_Valid]
 CHECK 
 (
-    LEN(TRIM([Name])) >= 0                    -- не должно быть пустым или состоять из пробелов
+    LEN(TRIM([Name])) > 0                    -- не должно быть пустым или состоять из пробелов
     AND [Name] = TRIM([Name])                 -- без ведущих/концевых пробелов
 );
 
@@ -302,7 +302,7 @@ CHECK
 ALTER TABLE [Actions] ADD CONSTRAINT [CK_Actions_Description_Valid]
 CHECK 
 (
-    LEN(TRIM([Description])) >= 0             -- не должно быть пустым или состоять из пробелов
+    LEN(TRIM([Description])) > 0             -- не должно быть пустым или состоять из пробелов
     AND [Description] = TRIM([Description])   -- без ведущих/концевых пробелов
 );
 
@@ -316,7 +316,7 @@ ALTER TABLE [CookingLogs] ADD CONSTRAINT [DF_CookingLogs_CookingDate] DEFAULT (S
 ALTER TABLE [SearchSets] ADD CONSTRAINT [CK_SearchSets_Name_Valid]
 CHECK 
 (
-    LEN(TRIM([Name])) >= 0                    -- не должно быть пустым или состоять из пробелов
+    LEN(TRIM([Name])) > 0                    -- не должно быть пустым или состоять из пробелов
     AND [Name] = TRIM([Name])                 -- без ведущих/концевых пробелов
 );
 
